@@ -127,3 +127,13 @@ window.addEventListener("pagehide", () => {
     closeVideoLog(currentTime.toFixed(2), metodo);
   }
 });
+
+window.addEventListener("beforeunload", () => {
+  const params = new URLSearchParams(window.location.search);
+  const metodo = params.get("met") || "beforeunload";
+
+  if (player && player.getCurrentTime) {
+    const currentTime = player.getCurrentTime();
+    closeVideoLog(currentTime.toFixed(2), metodo);
+  }
+});
