@@ -117,3 +117,13 @@ function sendInfoToServer(idUser, metodo, fecha = new Date()) {
         console.error("Error de red:", error);
     });
 }
+
+window.addEventListener("pagehide", () => {
+  const params = new URLSearchParams(window.location.search);
+  const metodo = params.get("met") || "pagehide";
+
+  if (player && player.getCurrentTime) {
+    const currentTime = player.getCurrentTime();
+    closeVideoLog(currentTime.toFixed(2), metodo);
+  }
+});
