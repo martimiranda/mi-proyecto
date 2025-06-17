@@ -2,16 +2,20 @@ let player; // Variable global para controlar el iframe
 
 // Carga el iframe de YouTube y crea el reproductor
 function openVideo() {
+  videoId = 'dsdjDx3gKa8'; // <-- remplaza con el ID del video real
   const modal = document.getElementById('videoModal');
   modal.classList.remove('hidden');
   const params = new URLSearchParams(window.location.search);
 
   // Accedemos a un parámetro llamado "nombre"
   const metodo = params.get("met");
+  if (metodo === 'a14n') {
+      videoId = 'Mvz26KD9L74'; // <-- remplaza con el ID del video real
+  }
 
   if (!player) {
     player = new YT.Player('youtubePlayer', {
-      videoId: 'dsdjDx3gKa8', // <-- remplaza con el ID del video real
+      videoId: videoId, // <-- remplaza con el ID del video real
       events: {
         'onReady': (event) => {
           event.target.playVideo();
