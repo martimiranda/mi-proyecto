@@ -9,7 +9,7 @@ function openVideo() {
 
   // Accedemos a un parámetro llamado "nombre"
   const metodo = params.get("met");
-  if (metodo === 'a14n' || metodo === 'a16') {
+  if (metodo === 'a14n' || metodo === 'a16' || metodo === 'a1') {
       videoId = 'Mvz26KD9L74'; // <-- remplaza con el ID del video real
   }
 
